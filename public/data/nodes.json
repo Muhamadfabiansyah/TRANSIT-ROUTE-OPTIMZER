@@ -1,0 +1,240 @@
+[
+  {
+    "id": "N01",
+    "name": "Pasar Induk Rau Serang (RTC)",
+    "lat": -6.1105,
+    "lng": 106.1679,
+    "type": "terminal",
+    "description": "Pusat grosir dan terminal angkutan umum utama Rau Trade Center di bagian timur kota.",
+    "passengerInfo": {
+      "nodeId": "N01",
+      "dailyBoarding": 3420,
+      "dailyAlighting": 2980,
+      "peakHours": "06:30 - 08:30 & 16:30 - 18:30",
+      "densityLevel": "High",
+      "congestionIndex": 0.88,
+      "notes": "Aktivitas bongkar muat komoditas pasar dan penumpang komuter harian"
+    }
+  },
+  {
+    "id": "N02",
+    "name": "Simpang Cinanggung",
+    "lat": -6.1118,
+    "lng": 106.1632,
+    "type": "junction",
+    "description": "Persimpangan Jl. Cinanggung & Jl. TB Sueb penghubung Pasar Rau dengan koridor Stasiun.",
+    "passengerInfo": {
+      "nodeId": "N02",
+      "dailyBoarding": 780,
+      "dailyAlighting": 820,
+      "peakHours": "07:00 - 08:30 & 16:00 - 17:30",
+      "densityLevel": "Medium",
+      "congestionIndex": 0.54,
+      "notes": "Titik perpindahan penumpang angkot ke becak dan ojek lokal"
+    }
+  },
+  {
+    "id": "N03",
+    "name": "Stasiun Kereta Api Serang",
+    "lat": -6.1124,
+    "lng": 106.1586,
+    "type": "station",
+    "description": "Stasiun KAI Daop 1 lintas Tanah Abang - Merak di Jl. Ki Tapa, simpul transit kereta dan angkot.",
+    "passengerInfo": {
+      "nodeId": "N03",
+      "dailyBoarding": 2850,
+      "dailyAlighting": 3100,
+      "peakHours": "06:00 - 08:00 & 17:00 - 19:30",
+      "densityLevel": "High",
+      "congestionIndex": 0.82,
+      "notes": "Simpul antarmoda kereta api Commuter Rangkasbitung-Merak dan angkot"
+    }
+  },
+  {
+    "id": "N04",
+    "name": "Simpang Calung / Lontarbaru",
+    "lat": -6.1142,
+    "lng": 106.1558,
+    "type": "junction",
+    "description": "Persimpangan Jl. Kotabaru dan Jl. TB Buang menuju kawasan pemukiman Lontarbaru.",
+    "passengerInfo": {
+      "nodeId": "N04",
+      "dailyBoarding": 450,
+      "dailyAlighting": 510,
+      "peakHours": "07:00 - 08:00 & 16:30 - 17:30",
+      "densityLevel": "Low",
+      "congestionIndex": 0.35,
+      "notes": "Kawasan residensial dan sekolah Lontarbaru"
+    }
+  },
+  {
+    "id": "N05",
+    "name": "Kawasan Niaga Royal Serang",
+    "lat": -6.1152,
+    "lng": 106.1574,
+    "type": "commercial",
+    "description": "Kawasan pertokoan dan sentra niaga Jl. Sultan Ageng Tirtayasa dan Jl. Diponegoro.",
+    "passengerInfo": {
+      "nodeId": "N05",
+      "dailyBoarding": 2100,
+      "dailyAlighting": 2450,
+      "peakHours": "15:00 - 20:30",
+      "densityLevel": "High",
+      "congestionIndex": 0.79,
+      "notes": "Aktivitas belanja niaga malam di koridor Royal"
+    }
+  },
+  {
+    "id": "N06",
+    "name": "Masjid Agung Ats-Tsaurah",
+    "lat": -6.1168,
+    "lng": 106.157,
+    "type": "religious",
+    "description": "Masjid Agung bersejarah Kota Serang di Jl. Veteran, simpul lalu lintas dan pusat keagamaan.",
+    "passengerInfo": {
+      "nodeId": "N06",
+      "dailyBoarding": 920,
+      "dailyAlighting": 980,
+      "peakHours": "11:45 - 13:00 & 18:00 - 19:30",
+      "densityLevel": "Medium",
+      "congestionIndex": 0.6,
+      "notes": "Pusat ibadah dan kegiatan keagamaan Kota Serang"
+    }
+  },
+  {
+    "id": "N07",
+    "name": "Ramayana Mall Serang",
+    "lat": -6.1167,
+    "lng": 106.1537,
+    "type": "commercial",
+    "description": "Pusat perbelanjaan utama Jl. Veteran sisi timur Alun-Alun Serang.",
+    "passengerInfo": {
+      "nodeId": "N07",
+      "dailyBoarding": 2200,
+      "dailyAlighting": 2350,
+      "peakHours": "15:30 - 20:00",
+      "densityLevel": "High",
+      "congestionIndex": 0.76,
+      "notes": "Pengunjung mall dan pusat ritel pakaian"
+    }
+  },
+  {
+    "id": "N08",
+    "name": "Alun-Alun Kota Serang",
+    "lat": -6.1172,
+    "lng": 106.1513,
+    "type": "public_square",
+    "description": "Ruang terbuka publik sentral, titik nol kilometer dan pusat keramaian serbaguna Kota Serang.",
+    "passengerInfo": {
+      "nodeId": "N08",
+      "dailyBoarding": 3600,
+      "dailyAlighting": 3500,
+      "peakHours": "16:00 - 21:00",
+      "densityLevel": "High",
+      "congestionIndex": 0.85,
+      "notes": "Pusat rekreasi, kuliner, dan interkoneksi transit warga Serang"
+    }
+  },
+  {
+    "id": "N09",
+    "name": "Simpang Kaujon",
+    "lat": -6.1205,
+    "lng": 106.1488,
+    "type": "junction",
+    "description": "Simpang penghubung Jl. Ki Mas Jong ke Jl. Mayor Syafei menuju selatan Kota Serang.",
+    "passengerInfo": {
+      "nodeId": "N09",
+      "dailyBoarding": 580,
+      "dailyAlighting": 620,
+      "peakHours": "07:00 - 08:30 & 16:30 - 17:30",
+      "densityLevel": "Low",
+      "congestionIndex": 0.38,
+      "notes": "Persimpangan pemukiman Kaujon"
+    }
+  },
+  {
+    "id": "N10",
+    "name": "Simpang Magersari",
+    "lat": -6.1215,
+    "lng": 106.1592,
+    "type": "junction",
+    "description": "Simpang arteri Jl. Jend. Ahmad Yani dan Jl. KH Abdul Hadi arah Cipare.",
+    "passengerInfo": {
+      "nodeId": "N10",
+      "dailyBoarding": 1100,
+      "dailyAlighting": 1050,
+      "peakHours": "07:00 - 08:30 & 16:30 - 18:00",
+      "densityLevel": "Medium",
+      "congestionIndex": 0.58,
+      "notes": "Persimpangan arteri utama Ahmad Yani"
+    }
+  },
+  {
+    "id": "N11",
+    "name": "Simpang Kebon Jahe",
+    "lat": -6.1258,
+    "lng": 106.1615,
+    "type": "junction",
+    "description": "Simpang perlintasan Jl. KH Abdul Hadi dan Jl. KH Abdul Fatah Hasan.",
+    "passengerInfo": {
+      "nodeId": "N11",
+      "dailyBoarding": 950,
+      "dailyAlighting": 910,
+      "peakHours": "07:00 - 08:30 & 16:30 - 18:00",
+      "densityLevel": "Medium",
+      "congestionIndex": 0.52,
+      "notes": "Kawasan komersial lokal Kebon Jahe"
+    }
+  },
+  {
+    "id": "N12",
+    "name": "Simpang Ciceri (Bunderan)",
+    "lat": -6.1252,
+    "lng": 106.169,
+    "type": "junction",
+    "description": "Kawasan Bunderan Ciceri dan Jl. Jend. Sudirman gerbang akses timur/akses tol Serang Timur.",
+    "passengerInfo": {
+      "nodeId": "N12",
+      "dailyBoarding": 2600,
+      "dailyAlighting": 2450,
+      "peakHours": "06:30 - 08:30 & 16:30 - 19:00",
+      "densityLevel": "High",
+      "congestionIndex": 0.81,
+      "notes": "Pintu gerbang timur Kota Serang menuju tol dan kampus"
+    }
+  },
+  {
+    "id": "N13",
+    "name": "Simpang Pisangan - Sumurpecung",
+    "lat": -6.1198,
+    "lng": 106.167,
+    "type": "junction",
+    "description": "Persimpangan Jl. KH Abdul Fatah Hasan Utara dan Jl. KH Ahmad Khatib menuju Pasar Rau.",
+    "passengerInfo": {
+      "nodeId": "N13",
+      "dailyBoarding": 1020,
+      "dailyAlighting": 990,
+      "peakHours": "07:00 - 08:30 & 16:30 - 18:00",
+      "densityLevel": "Medium",
+      "congestionIndex": 0.55,
+      "notes": "Persimpangan penghubung timur ke Pasar Rau"
+    }
+  },
+  {
+    "id": "N14",
+    "name": "Simpang Lopang Indah",
+    "lat": -6.1082,
+    "lng": 106.162,
+    "type": "junction",
+    "description": "Simpang Jl. Raya Banten Lama arah Kasemen - Lopang dan koridor utara Stasiun.",
+    "passengerInfo": {
+      "nodeId": "N14",
+      "dailyBoarding": 640,
+      "dailyAlighting": 610,
+      "peakHours": "06:30 - 08:00 & 16:00 - 17:30",
+      "densityLevel": "Low",
+      "congestionIndex": 0.4,
+      "notes": "Kawasan pemukiman Lopang Indah arah Banten Lama"
+    }
+  }
+]

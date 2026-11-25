@@ -1,0 +1,1095 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "road_geom_1",
+      "properties": {
+        "edgeId": "E01_02",
+        "source": "N01",
+        "target": "N02",
+        "streetName": "Jl. TB Sueb / Jl. Cinanggung",
+        "weightKm": 0.5408,
+        "oneWay": false,
+        "description": "Akses barat Pasar Rau menuju Jl. Cinanggung"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1679,
+            -6.1105
+          ],
+          [
+            106.1663,
+            -6.1108
+          ],
+          [
+            106.1648,
+            -6.1112
+          ],
+          [
+            106.1632,
+            -6.1118
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_1_rev",
+      "properties": {
+        "edgeId": "E01_02_REV",
+        "source": "N02",
+        "target": "N01",
+        "streetName": "Jl. TB Sueb / Jl. Cinanggung",
+        "weightKm": 0.5408,
+        "oneWay": false,
+        "description": "Akses barat Pasar Rau menuju Jl. Cinanggung (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1632,
+            -6.1118
+          ],
+          [
+            106.1648,
+            -6.1112
+          ],
+          [
+            106.1663,
+            -6.1108
+          ],
+          [
+            106.1679,
+            -6.1105
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_2",
+      "properties": {
+        "edgeId": "E01_13",
+        "source": "N01",
+        "target": "N13",
+        "streetName": "Jl. KH Abdul Latif / Jl. Ayip Usman",
+        "weightKm": 1.0458,
+        "oneWay": false,
+        "description": "Koridor timur menghubungkan Pasar Rau ke Sumurpecung"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1679,
+            -6.1105
+          ],
+          [
+            106.1681,
+            -6.113
+          ],
+          [
+            106.1678,
+            -6.116
+          ],
+          [
+            106.167,
+            -6.1198
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_2_rev",
+      "properties": {
+        "edgeId": "E01_13_REV",
+        "source": "N13",
+        "target": "N01",
+        "streetName": "Jl. KH Abdul Latif / Jl. Ayip Usman",
+        "weightKm": 1.0458,
+        "oneWay": false,
+        "description": "Koridor timur menghubungkan Pasar Rau ke Sumurpecung (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.167,
+            -6.1198
+          ],
+          [
+            106.1678,
+            -6.116
+          ],
+          [
+            106.1681,
+            -6.113
+          ],
+          [
+            106.1679,
+            -6.1105
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_3",
+      "properties": {
+        "edgeId": "E02_03",
+        "source": "N02",
+        "target": "N03",
+        "streetName": "Jl. Ki Tapa Timur",
+        "weightKm": 0.513,
+        "oneWay": false,
+        "description": "Ruas jalan menghubungkan Cinanggung ke depan Stasiun KAI Serang"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1632,
+            -6.1118
+          ],
+          [
+            106.1615,
+            -6.112
+          ],
+          [
+            106.1601,
+            -6.1122
+          ],
+          [
+            106.1586,
+            -6.1124
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_3_rev",
+      "properties": {
+        "edgeId": "E02_03_REV",
+        "source": "N03",
+        "target": "N02",
+        "streetName": "Jl. Ki Tapa Timur",
+        "weightKm": 0.513,
+        "oneWay": false,
+        "description": "Ruas jalan menghubungkan Cinanggung ke depan Stasiun KAI Serang (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1586,
+            -6.1124
+          ],
+          [
+            106.1601,
+            -6.1122
+          ],
+          [
+            106.1615,
+            -6.112
+          ],
+          [
+            106.1632,
+            -6.1118
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_4",
+      "properties": {
+        "edgeId": "E02_14",
+        "source": "N02",
+        "target": "N14",
+        "streetName": "Jl. Lopang Raya",
+        "weightKm": 0.4238,
+        "oneWay": false,
+        "description": "Jalan tembus utara Cinanggung ke kawasan Lopang"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1632,
+            -6.1118
+          ],
+          [
+            106.1628,
+            -6.11
+          ],
+          [
+            106.162,
+            -6.1082
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_4_rev",
+      "properties": {
+        "edgeId": "E02_14_REV",
+        "source": "N14",
+        "target": "N02",
+        "streetName": "Jl. Lopang Raya",
+        "weightKm": 0.4238,
+        "oneWay": false,
+        "description": "Jalan tembus utara Cinanggung ke kawasan Lopang (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.162,
+            -6.1082
+          ],
+          [
+            106.1628,
+            -6.11
+          ],
+          [
+            106.1632,
+            -6.1118
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_5",
+      "properties": {
+        "edgeId": "E14_03",
+        "source": "N14",
+        "target": "N03",
+        "streetName": "Jl. Raya Serang-Banten Lama",
+        "weightKm": 0.6176,
+        "oneWay": false,
+        "description": "Ruas jalan penghubung Banten Lama menuju Stasiun Serang"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.162,
+            -6.1082
+          ],
+          [
+            106.1602,
+            -6.1095
+          ],
+          [
+            106.1591,
+            -6.111
+          ],
+          [
+            106.1586,
+            -6.1124
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_5_rev",
+      "properties": {
+        "edgeId": "E14_03_REV",
+        "source": "N03",
+        "target": "N14",
+        "streetName": "Jl. Raya Serang-Banten Lama",
+        "weightKm": 0.6176,
+        "oneWay": false,
+        "description": "Ruas jalan penghubung Banten Lama menuju Stasiun Serang (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1586,
+            -6.1124
+          ],
+          [
+            106.1591,
+            -6.111
+          ],
+          [
+            106.1602,
+            -6.1095
+          ],
+          [
+            106.162,
+            -6.1082
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_6",
+      "properties": {
+        "edgeId": "E03_04",
+        "source": "N03",
+        "target": "N04",
+        "streetName": "Jl. Ki Tapa Barat / Kotabaru",
+        "weightKm": 0.3691,
+        "oneWay": false,
+        "description": "Akses dari Stasiun Serang menuju Simpang Calung"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1586,
+            -6.1124
+          ],
+          [
+            106.1572,
+            -6.1132
+          ],
+          [
+            106.1558,
+            -6.1142
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_6_rev",
+      "properties": {
+        "edgeId": "E03_04_REV",
+        "source": "N04",
+        "target": "N03",
+        "streetName": "Jl. Ki Tapa Barat / Kotabaru",
+        "weightKm": 0.3691,
+        "oneWay": false,
+        "description": "Akses dari Stasiun Serang menuju Simpang Calung (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1558,
+            -6.1142
+          ],
+          [
+            106.1572,
+            -6.1132
+          ],
+          [
+            106.1586,
+            -6.1124
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_7",
+      "properties": {
+        "edgeId": "E03_05",
+        "source": "N03",
+        "target": "N05",
+        "streetName": "Jl. Pasar Lama / Diponegoro",
+        "weightKm": 0.3384,
+        "oneWay": false,
+        "description": "Akses cepat dari Stasiun Serang menuju Kawasan Niaga Royal"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1586,
+            -6.1124
+          ],
+          [
+            106.158,
+            -6.1138
+          ],
+          [
+            106.1574,
+            -6.1152
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_7_rev",
+      "properties": {
+        "edgeId": "E03_05_REV",
+        "source": "N05",
+        "target": "N03",
+        "streetName": "Jl. Pasar Lama / Diponegoro",
+        "weightKm": 0.3384,
+        "oneWay": false,
+        "description": "Akses cepat dari Stasiun Serang menuju Kawasan Niaga Royal (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1574,
+            -6.1152
+          ],
+          [
+            106.158,
+            -6.1138
+          ],
+          [
+            106.1586,
+            -6.1124
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_8",
+      "properties": {
+        "edgeId": "E04_07",
+        "source": "N04",
+        "target": "N07",
+        "streetName": "Jl. KH Syam'un Utara",
+        "weightKm": 0.3622,
+        "oneWay": false,
+        "description": "Arah barat daya dari Calung tembus ke Ramayana dan Alun-Alun"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1558,
+            -6.1142
+          ],
+          [
+            106.1548,
+            -6.1154
+          ],
+          [
+            106.1537,
+            -6.1167
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_8_rev",
+      "properties": {
+        "edgeId": "E04_07_REV",
+        "source": "N07",
+        "target": "N04",
+        "streetName": "Jl. KH Syam'un Utara",
+        "weightKm": 0.3622,
+        "oneWay": false,
+        "description": "Arah barat daya dari Calung tembus ke Ramayana dan Alun-Alun (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1537,
+            -6.1167
+          ],
+          [
+            106.1548,
+            -6.1154
+          ],
+          [
+            106.1558,
+            -6.1142
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_9",
+      "properties": {
+        "edgeId": "E05_06",
+        "source": "N05",
+        "target": "N06",
+        "streetName": "Jl. Sultan Ageng Tirtayasa",
+        "weightKm": 0.1833,
+        "oneWay": true,
+        "description": "Kawasan pertokoan Royal satu arah menuju Masjid Agung"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1574,
+            -6.1152
+          ],
+          [
+            106.1572,
+            -6.116
+          ],
+          [
+            106.157,
+            -6.1168
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_10",
+      "properties": {
+        "edgeId": "E06_07",
+        "source": "N06",
+        "target": "N07",
+        "streetName": "Jl. Veteran Tengah",
+        "weightKm": 0.3652,
+        "oneWay": false,
+        "description": "Koridor utama Jl. Veteran dari Masjid Agung ke Ramayana"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.157,
+            -6.1168
+          ],
+          [
+            106.1553,
+            -6.1167
+          ],
+          [
+            106.1537,
+            -6.1167
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_10_rev",
+      "properties": {
+        "edgeId": "E06_07_REV",
+        "source": "N07",
+        "target": "N06",
+        "streetName": "Jl. Veteran Tengah",
+        "weightKm": 0.3652,
+        "oneWay": false,
+        "description": "Koridor utama Jl. Veteran dari Masjid Agung ke Ramayana (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1537,
+            -6.1167
+          ],
+          [
+            106.1553,
+            -6.1167
+          ],
+          [
+            106.157,
+            -6.1168
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_11",
+      "properties": {
+        "edgeId": "E06_10",
+        "source": "N06",
+        "target": "N10",
+        "streetName": "Jl. Jendral Ahmad Yani",
+        "weightKm": 0.5774,
+        "oneWay": false,
+        "description": "Jalan protokol Ahmad Yani menghubungkan Masjid Agung ke Simpang Magersari"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.157,
+            -6.1168
+          ],
+          [
+            106.1581,
+            -6.1188
+          ],
+          [
+            106.1592,
+            -6.1215
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_11_rev",
+      "properties": {
+        "edgeId": "E06_10_REV",
+        "source": "N10",
+        "target": "N06",
+        "streetName": "Jl. Jendral Ahmad Yani",
+        "weightKm": 0.5774,
+        "oneWay": false,
+        "description": "Jalan protokol Ahmad Yani menghubungkan Masjid Agung ke Simpang Magersari (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1592,
+            -6.1215
+          ],
+          [
+            106.1581,
+            -6.1188
+          ],
+          [
+            106.157,
+            -6.1168
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_12",
+      "properties": {
+        "edgeId": "E07_08",
+        "source": "N07",
+        "target": "N08",
+        "streetName": "Jl. Veteran Barat",
+        "weightKm": 0.2713,
+        "oneWay": false,
+        "description": "Koridor langsung depan Ramayana menuju pintu timur Alun-Alun"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1537,
+            -6.1167
+          ],
+          [
+            106.1525,
+            -6.117
+          ],
+          [
+            106.1513,
+            -6.1172
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_12_rev",
+      "properties": {
+        "edgeId": "E07_08_REV",
+        "source": "N08",
+        "target": "N07",
+        "streetName": "Jl. Veteran Barat",
+        "weightKm": 0.2713,
+        "oneWay": false,
+        "description": "Koridor langsung depan Ramayana menuju pintu timur Alun-Alun (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1513,
+            -6.1172
+          ],
+          [
+            106.1525,
+            -6.117
+          ],
+          [
+            106.1537,
+            -6.1167
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_13",
+      "properties": {
+        "edgeId": "E08_09",
+        "source": "N08",
+        "target": "N09",
+        "streetName": "Jl. Ki Mas Jong",
+        "weightKm": 0.4594,
+        "oneWay": false,
+        "description": "Akses sisi barat Alun-Alun menuju Kaujon"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1513,
+            -6.1172
+          ],
+          [
+            106.1501,
+            -6.1188
+          ],
+          [
+            106.1488,
+            -6.1205
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_13_rev",
+      "properties": {
+        "edgeId": "E08_09_REV",
+        "source": "N09",
+        "target": "N08",
+        "streetName": "Jl. Ki Mas Jong",
+        "weightKm": 0.4594,
+        "oneWay": false,
+        "description": "Akses sisi barat Alun-Alun menuju Kaujon (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1488,
+            -6.1205
+          ],
+          [
+            106.1501,
+            -6.1188
+          ],
+          [
+            106.1513,
+            -6.1172
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_14",
+      "properties": {
+        "edgeId": "E09_11",
+        "source": "N09",
+        "target": "N11",
+        "streetName": "Jl. Mayor Syafei / Kebon Jahe",
+        "weightKm": 1.5291,
+        "oneWay": false,
+        "description": "Jalan melingkar dari Kaujon menembus Simpang Kebon Jahe"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1488,
+            -6.1205
+          ],
+          [
+            106.1528,
+            -6.1228
+          ],
+          [
+            106.1575,
+            -6.1245
+          ],
+          [
+            106.1615,
+            -6.1258
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_14_rev",
+      "properties": {
+        "edgeId": "E09_11_REV",
+        "source": "N11",
+        "target": "N09",
+        "streetName": "Jl. Mayor Syafei / Kebon Jahe",
+        "weightKm": 1.5291,
+        "oneWay": false,
+        "description": "Jalan melingkar dari Kaujon menembus Simpang Kebon Jahe (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1615,
+            -6.1258
+          ],
+          [
+            106.1575,
+            -6.1245
+          ],
+          [
+            106.1528,
+            -6.1228
+          ],
+          [
+            106.1488,
+            -6.1205
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_15",
+      "properties": {
+        "edgeId": "E10_11",
+        "source": "N10",
+        "target": "N11",
+        "streetName": "Jl. KH Abdul Hadi",
+        "weightKm": 0.5422,
+        "oneWay": false,
+        "description": "Koridor penghubung Magersari menuju Kebon Jahe"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1592,
+            -6.1215
+          ],
+          [
+            106.1604,
+            -6.1235
+          ],
+          [
+            106.1615,
+            -6.1258
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_15_rev",
+      "properties": {
+        "edgeId": "E10_11_REV",
+        "source": "N11",
+        "target": "N10",
+        "streetName": "Jl. KH Abdul Hadi",
+        "weightKm": 0.5422,
+        "oneWay": false,
+        "description": "Koridor penghubung Magersari menuju Kebon Jahe (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1615,
+            -6.1258
+          ],
+          [
+            106.1604,
+            -6.1235
+          ],
+          [
+            106.1592,
+            -6.1215
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_16",
+      "properties": {
+        "edgeId": "E10_13",
+        "source": "N10",
+        "target": "N13",
+        "streetName": "Jl. KH Ahmad Khatib",
+        "weightKm": 0.8833,
+        "oneWay": false,
+        "description": "Ruas jalan menghubungkan Simpang Magersari ke Sumurpecung/Pisangan"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1592,
+            -6.1215
+          ],
+          [
+            106.163,
+            -6.1208
+          ],
+          [
+            106.167,
+            -6.1198
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_16_rev",
+      "properties": {
+        "edgeId": "E10_13_REV",
+        "source": "N13",
+        "target": "N10",
+        "streetName": "Jl. KH Ahmad Khatib",
+        "weightKm": 0.8833,
+        "oneWay": false,
+        "description": "Ruas jalan menghubungkan Simpang Magersari ke Sumurpecung/Pisangan (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.167,
+            -6.1198
+          ],
+          [
+            106.163,
+            -6.1208
+          ],
+          [
+            106.1592,
+            -6.1215
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_17",
+      "properties": {
+        "edgeId": "E11_12",
+        "source": "N11",
+        "target": "N12",
+        "streetName": "Jl. KH Abdul Fatah Hasan Selatan",
+        "weightKm": 0.8319,
+        "oneWay": false,
+        "description": "Ruas jalan menghubungkan Kebon Jahe ke Bunderan Ciceri"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.1615,
+            -6.1258
+          ],
+          [
+            106.1652,
+            -6.1255
+          ],
+          [
+            106.169,
+            -6.1252
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_17_rev",
+      "properties": {
+        "edgeId": "E11_12_REV",
+        "source": "N12",
+        "target": "N11",
+        "streetName": "Jl. KH Abdul Fatah Hasan Selatan",
+        "weightKm": 0.8319,
+        "oneWay": false,
+        "description": "Ruas jalan menghubungkan Kebon Jahe ke Bunderan Ciceri (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.169,
+            -6.1252
+          ],
+          [
+            106.1652,
+            -6.1255
+          ],
+          [
+            106.1615,
+            -6.1258
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_18",
+      "properties": {
+        "edgeId": "E12_13",
+        "source": "N12",
+        "target": "N13",
+        "streetName": "Jl. KH Abdul Fatah Hasan Timur",
+        "weightKm": 0.6399,
+        "oneWay": false,
+        "description": "Akses utara dari Ciceri menuju Pisangan / Sumurpecung"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.169,
+            -6.1252
+          ],
+          [
+            106.168,
+            -6.1225
+          ],
+          [
+            106.167,
+            -6.1198
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road_geom_18_rev",
+      "properties": {
+        "edgeId": "E12_13_REV",
+        "source": "N13",
+        "target": "N12",
+        "streetName": "Jl. KH Abdul Fatah Hasan Timur",
+        "weightKm": 0.6399,
+        "oneWay": false,
+        "description": "Akses utara dari Ciceri menuju Pisangan / Sumurpecung (Arah sebaliknya)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.167,
+            -6.1198
+          ],
+          [
+            106.168,
+            -6.1225
+          ],
+          [
+            106.169,
+            -6.1252
+          ]
+        ]
+      }
+    }
+  ]
+}
