@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ExecutionStep } from '../algorithms/algorithmTypes';
 import { GlobalSimulationState } from '../simulation/SimulationState';
-import { Terminal, ChevronDown, ChevronUp, Layers, CheckCircle2 } from 'lucide-react';
+import { Terminal, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface ExecutionLogProps {
   simulationState: GlobalSimulationState;
@@ -77,35 +77,38 @@ export const ExecutionLog: React.FC<ExecutionLogProps> = ({
 
   return (
     <div
-      className={`transition-all duration-300 ease-in-out bg-slate-900/95 border-t border-slate-700/80 backdrop-blur-md shadow-2xl flex flex-col ${
-        isCollapsed ? 'h-10' : 'h-64 sm:h-72'
+      className={`transition-all duration-300 ease-in-out bg-slate-900/98 border-t border-slate-700/80 backdrop-blur-md shadow-2xl flex flex-col select-text ${
+        isCollapsed ? 'h-11' : 'h-64 sm:h-72'
       }`}
+      role="region"
+      aria-label="Log Eksekusi Pencarian"
     >
       {/* Drawer Bar Header */}
       <div
         onClick={toggleCollapse}
-        className="h-10 px-4 bg-slate-950/90 hover:bg-slate-900 cursor-pointer border-b border-slate-800/80 flex items-center justify-between gap-3 text-xs select-none transition"
+        className="h-11 px-3 sm:px-4 bg-slate-950/95 hover:bg-slate-900 cursor-pointer border-b border-slate-800/80 flex items-center justify-between gap-2 text-xs transition"
       >
-        <div className="flex items-center gap-2.5 overflow-hidden">
-          <Terminal className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+        <div className="flex items-center gap-2 overflow-hidden min-w-0">
+          <Terminal className="w-4 h-4 text-cyan-400 shrink-0" />
           <span className="font-bold text-slate-200 shrink-0 tracking-wide">
-            EXECUTION TRACE LOG
+            LOG EKSEKUSI
           </span>
-          <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono shrink-0">
-            {combinedItems.length} steps
+          <span className="text-[11px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-mono shrink-0">
+            {combinedItems.length}
           </span>
-          <span className="text-slate-600 hidden sm:inline">|</span>
-          <span className="text-[11px] text-slate-400 truncate hidden md:inline font-sans">
+          <span className="text-slate-600 hidden md:inline">|</span>
+          <span className="text-xs text-slate-400 truncate hidden md:inline font-sans">
             {activeDesc}
           </span>
         </div>
 
         <div className="flex items-center gap-2 shrink-0" onClick={(e) => e.stopPropagation()}>
           {/* Filter Pills */}
-          <div className="flex items-center bg-slate-900 p-0.5 rounded-lg border border-slate-800 text-[10px]">
+          <div className="flex items-center bg-slate-900 p-0.5 rounded-lg border border-slate-800 text-xs">
             <button
+              type="button"
               onClick={() => setFilter('ALL')}
-              className={`px-2 py-0.5 rounded transition font-medium ${
+              className={`min-h-[32px] px-2.5 py-1 rounded transition font-medium ${
                 filter === 'ALL'
                   ? 'bg-slate-700 text-white font-bold'
                   : 'text-slate-400 hover:text-slate-200'
@@ -114,8 +117,9 @@ export const ExecutionLog: React.FC<ExecutionLogProps> = ({
               All
             </button>
             <button
+              type="button"
               onClick={() => setFilter('UCS')}
-              className={`px-2 py-0.5 rounded transition font-medium ${
+              className={`min-h-[32px] px-2.5 py-1 rounded transition font-medium ${
                 filter === 'UCS'
                   ? 'bg-cyan-900 text-cyan-300 font-bold border border-cyan-700'
                   : 'text-slate-400 hover:text-slate-200'
@@ -124,8 +128,9 @@ export const ExecutionLog: React.FC<ExecutionLogProps> = ({
               UCS
             </button>
             <button
+              type="button"
               onClick={() => setFilter('GREEDY')}
-              className={`px-2 py-0.5 rounded transition font-medium ${
+              className={`min-h-[32px] px-2.5 py-1 rounded transition font-medium ${
                 filter === 'GREEDY'
                   ? 'bg-amber-900 text-amber-300 font-bold border border-amber-700'
                   : 'text-slate-400 hover:text-slate-200'
@@ -136,10 +141,12 @@ export const ExecutionLog: React.FC<ExecutionLogProps> = ({
           </div>
 
           <button
+            type="button"
             onClick={toggleCollapse}
-            className="p-1 rounded text-slate-300 hover:text-white hover:bg-slate-800 transition flex items-center gap-1 text-[11px] font-semibold"
+            className="min-h-[36px] px-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition flex items-center gap-1 text-xs font-semibold"
+            aria-label={isCollapsed ? 'Buka Log Eksekusi' : 'Tutup Log Eksekusi'}
           >
-            <span>{isCollapsed ? 'Buka Log' : 'Tutup'}</span>
+            <span className="hidden xs:inline">{isCollapsed ? 'Buka' : 'Tutup'}</span>
             {isCollapsed ? <ChevronUp className="w-4 h-4 text-cyan-400" /> : <ChevronDown className="w-4 h-4" />}
           </button>
         </div>
@@ -149,11 +156,11 @@ export const ExecutionLog: React.FC<ExecutionLogProps> = ({
       {!isCollapsed && (
         <div
           ref={logContainerRef}
-          className="flex-1 overflow-y-auto divide-y divide-slate-800/60 font-mono text-[11px] p-1"
+          className="flex-1 overflow-y-auto divide-y divide-slate-800/60 font-mono text-xs p-1"
         >
           {combinedItems.length === 0 ? (
             <div className="py-10 text-center text-slate-500 text-xs font-sans">
-              Belum ada log eksekusi. Silakan klik Run UCS atau Run Greedy untuk memulai proses pencarian.
+              Belum ada log eksekusi. Silakan klik Play atau Step untuk memulai proses pencarian.
             </div>
           ) : (
             combinedItems.map((item, idx) => {
@@ -164,20 +171,27 @@ export const ExecutionLog: React.FC<ExecutionLogProps> = ({
                 <div
                   key={`${step.algorithm}-${step.stepNumber}-${idx}`}
                   onClick={() => onJumpToStep(step.algorithm, originalIndex)}
-                  className={`px-3 py-2 transition cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-slate-800/60 ${
+                  className={`min-h-[44px] px-3 py-2 transition cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 hover:bg-slate-800/60 ${
                     isActive
                       ? isUCS
                         ? 'log-row-active bg-cyan-950/70 border-l-4 border-cyan-400'
                         : 'log-row-active bg-amber-950/70 border-l-4 border-amber-400'
                       : ''
                   }`}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      onJumpToStep(step.algorithm, originalIndex);
+                    }
+                  }}
                 >
                   {/* Left Column: Step #, Algorithm, Node, Status */}
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-bold text-slate-400 text-[10px]">#{step.stepNumber}</span>
+                  <div className="flex flex-wrap items-center gap-2 min-w-0">
+                    <span className="font-bold text-slate-400 text-xs">#{step.stepNumber}</span>
 
                     <span
-                      className={`px-1.5 py-0.5 rounded text-[9px] font-bold ${
+                      className={`px-1.5 py-0.5 rounded text-[10px] font-bold ${
                         isUCS
                           ? 'bg-cyan-950 text-cyan-300 border border-cyan-800'
                           : 'bg-amber-950 text-amber-300 border border-amber-800'
@@ -186,12 +200,12 @@ export const ExecutionLog: React.FC<ExecutionLogProps> = ({
                       {step.algorithm}
                     </span>
 
-                    <span className="font-semibold text-slate-200">
+                    <span className="font-semibold text-slate-200 truncate">
                       {step.currentNodeId} ({step.currentNodeName})
                     </span>
 
                     <span
-                      className={`px-1.5 py-0.2 rounded text-[9px] font-medium uppercase ${
+                      className={`px-1.5 py-0.2 rounded text-[10px] font-medium uppercase ${
                         step.status === 'GOAL_REACHED'
                           ? 'bg-emerald-950 text-emerald-300 border border-emerald-800'
                           : step.status === 'EXPLORING'
@@ -207,7 +221,7 @@ export const ExecutionLog: React.FC<ExecutionLogProps> = ({
                     </span>
 
                     {/* Cost / Heuristic */}
-                    <div className="flex items-center gap-1.5 text-[10px] text-slate-300">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-300">
                       {isUCS ? (
                         <span>
                           g(n) = <b className="text-cyan-400">{step.cost_g.toFixed(3)} km</b>
@@ -221,7 +235,7 @@ export const ExecutionLog: React.FC<ExecutionLogProps> = ({
                   </div>
 
                   {/* Right Column: Description */}
-                  <div className="text-[10px] text-slate-400 max-w-lg font-sans text-left sm:text-right line-clamp-1">
+                  <div className="text-xs text-slate-400 max-w-lg font-sans text-left sm:text-right line-clamp-1 break-words">
                     {step.description}
                   </div>
                 </div>

@@ -13,6 +13,9 @@ interface MapViewProps {
   layers: MapLayerVisibility;
   onSetOrigin: (nodeId: string) => void;
   onSetDestination: (nodeId: string) => void;
+  extraLeftControls?: React.ReactNode;
+  extraRightControls?: React.ReactNode;
+  centerControl?: React.ReactNode;
 }
 
 export const MapContainer: React.FC<MapViewProps> = ({
@@ -21,6 +24,9 @@ export const MapContainer: React.FC<MapViewProps> = ({
   layers,
   onSetOrigin,
   onSetDestination,
+  extraLeftControls,
+  extraRightControls,
+  centerControl,
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
@@ -55,7 +61,7 @@ export const MapContainer: React.FC<MapViewProps> = ({
       doubleClickZoom: false, // Prevents unintended auto-zoom on double-clicking
     });
 
-    // Custom positioned zoom control
+    // Custom positioned zoom control at bottom-right
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
     // OpenStreetMap Standard Tile Layer
@@ -63,7 +69,7 @@ export const MapContainer: React.FC<MapViewProps> = ({
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
         attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
         maxZoom: 19,
       }
     ).addTo(map);
@@ -99,7 +105,7 @@ export const MapContainer: React.FC<MapViewProps> = ({
     };
   }, []);
 
-  // 2. Continuous ResizeObserver: guarantees map tiles fill 100% of container when layout/panels shift without accidental panning
+  // 2. Continuous ResizeObserver: guarantees map tiles fill 100% of container when layout/panels shift
   useEffect(() => {
     if (!mapContainerRef.current || !mapInstanceRef.current) return;
     const map = mapInstanceRef.current;
@@ -425,7 +431,7 @@ export const MapContainer: React.FC<MapViewProps> = ({
       const marker = L.marker([node.lat, node.lng], { icon: customIcon });
 
       const popupDiv = document.createElement('div');
-      popupDiv.className = 'p-3 text-slate-100 max-w-xs';
+      popupDiv.className = 'p-3 text-slate-100 max-w-[280px] xs:max-w-xs';
       popupDiv.innerHTML = `
         <div class="border-b border-slate-700 pb-2 mb-2">
           <div class="flex items-center justify-between gap-2">
@@ -439,30 +445,34 @@ export const MapContainer: React.FC<MapViewProps> = ({
 
         ${
           node.passengerInfo
-            ? `<div class="bg-slate-800/80 p-2 rounded border border-slate-700/60 mb-2.5 text-[11px]">
+            ? `<div class="bg-slate-800/80 p-2 rounded-lg border border-slate-700/60 mb-2.5 text-[11px]">
                 <div class="flex justify-between text-slate-300">
                   <span>Naik: <b class="text-cyan-300">${node.passengerInfo.dailyBoarding.toLocaleString()}</b></span>
                   <span>Turun: <b class="text-amber-300">${node.passengerInfo.dailyAlighting.toLocaleString()}</b></span>
                 </div>
                 <div class="text-[10px] text-slate-400 mt-1 flex justify-between">
                   <span>Kepadatan: ${node.passengerInfo.densityLevel}</span>
-                  <span class="text-amber-400 font-semibold">[Simulated Data]</span>
+                  <span class="text-amber-400 font-semibold">[Simulasi]</span>
                 </div>
               </div>`
             : ''
         }
 
         <div class="grid grid-cols-2 gap-2 mt-2">
-          <button id="btn-set-origin-${node.id}" class="px-2 py-1.5 text-xs font-semibold rounded bg-red-600 hover:bg-red-500 text-white transition flex items-center justify-center gap-1 shadow-sm">
-            Set as Origin
+          <button id="btn-set-origin-${node.id}" class="min-h-[44px] px-2 py-2 text-xs font-bold rounded-lg bg-red-600 hover:bg-red-500 active:bg-red-700 text-white transition flex items-center justify-center gap-1 shadow-sm">
+            Set Asal
           </button>
-          <button id="btn-set-dest-${node.id}" class="px-2 py-1.5 text-xs font-semibold rounded bg-purple-600 hover:bg-purple-500 text-white transition flex items-center justify-center gap-1 shadow-sm">
-            Set as Dest
+          <button id="btn-set-dest-${node.id}" class="min-h-[44px] px-2 py-2 text-xs font-bold rounded-lg bg-purple-600 hover:bg-purple-500 active:bg-purple-700 text-white transition flex items-center justify-center gap-1 shadow-sm">
+            Set Tujuan
           </button>
         </div>
       `;
 
-      marker.bindPopup(popupDiv, { autoPan: false });
+      marker.bindPopup(popupDiv, {
+        autoPan: true,
+        autoPanPadding: L.point(16, 50),
+        maxWidth: Math.min(290, typeof window !== 'undefined' ? window.innerWidth - 32 : 290),
+      });
 
       marker.on('popupopen', () => {
         const originBtn = document.getElementById(`btn-set-origin-${node.id}`);
@@ -486,31 +496,24 @@ export const MapContainer: React.FC<MapViewProps> = ({
     }
   }, [graph, layers.graphNodes, simulationState.originId, simulationState.destinationId, simulationState.ucsState.currentNodeId, simulationState.greedyState.currentNodeId, simulationState.ucsState.exploredNodeIds, simulationState.greedyState.exploredNodeIds, onSetOrigin, onSetDestination]);
 
-  // 11. Refined Bus Icon Generator (Strict Centerline Anchor [22, 11])
+  // 11. Refined Bus Icon Generator
   const createCenterlineBusIcon = (
     algo: 'UCS' | 'GREEDY',
     color: string,
     bearing: number
   ) => {
-    // Rotation angle: in SVG pointing right (+90 deg), so angle = bearing - 90
     const rotation = (bearing - 90) % 360;
 
     const html = `
       <div style="width: 44px; height: 22px; position: relative; pointer-events: none; margin: 0; padding: 0;">
         <div class="bus-rotator-${algo.toLowerCase()}" style="width: 44px; height: 22px; transform: rotate(${rotation}deg); transform-origin: 22px 11px; will-change: transform;">
           <svg viewBox="0 0 44 22" width="44" height="22" style="display: block; overflow: visible; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));">
-            <!-- Headlight Beams -->
             <polygon points="36,5 44,2 44,8" fill="${color}" opacity="0.65" />
             <polygon points="36,17 44,14 44,20" fill="${color}" opacity="0.65" />
-            <!-- Bus Body (Width 36, Height 18, Centered at x: 4..40, y: 2..20 -> Center is x=22, y=11) -->
             <rect x="4" y="2" width="36" height="18" rx="4" fill="#090d16" stroke="${color}" stroke-width="2.2" />
-            <!-- Windshield at front (right) -->
             <path d="M 32 4 Q 38 11 32 18" fill="${color}" opacity="0.9" />
-            <!-- Roof Sign / Compartment -->
             <rect x="10" y="5" width="16" height="12" rx="2" fill="#1e293b" stroke="#334155" stroke-width="0.7" />
-            <!-- Route Label -->
             <text x="18" y="13" fill="#ffffff" font-size="7" font-weight="900" font-family="system-ui, sans-serif" text-anchor="middle" dominant-baseline="middle">${algo}</text>
-            <!-- Red Tail Lights at back (left) -->
             <rect x="4" y="4" width="2" height="3.5" fill="#ef4444" rx="1" />
             <rect x="4" y="14.5" width="2" height="3.5" fill="#ef4444" rx="1" />
           </svg>
@@ -522,16 +525,16 @@ export const MapContainer: React.FC<MapViewProps> = ({
       className: `bus-marker-${algo.toLowerCase()}`,
       html,
       iconSize: [44, 22],
-      iconAnchor: [22, 11], // Exactly at geometric center (22, 11)
+      iconAnchor: [22, 11],
     });
   };
 
-  // 12. Render BUS ANIMATION Layer (High-Performance 60FPS Centerline Navigation)
+  // 12. Render BUS ANIMATION Layer
   useEffect(() => {
     const layer = busLayerRef.current;
     const { ucsState, greedyState } = simulationState;
 
-    // --- A. Handle UCS Bus Marker ---
+    // UCS Bus Marker
     if (ucsState.bus.active && ucsState.bus.position) {
       const rot = (ucsState.bus.bearing - 90) % 360;
 
@@ -554,7 +557,7 @@ export const MapContainer: React.FC<MapViewProps> = ({
       }
     }
 
-    // --- B. Handle Greedy Bus Marker ---
+    // Greedy Bus Marker
     if (greedyState.bus.active && greedyState.bus.position) {
       const rot = (greedyState.bus.bearing - 90) % 360;
 
@@ -585,7 +588,7 @@ export const MapContainer: React.FC<MapViewProps> = ({
     simulationState.greedyState.bus.bearing,
   ]);
 
-  // Manual Center on Entire Network - Only triggered when user manually clicks button. STRICTLY preserves current zoom level.
+  // Center on Entire Network
   const handleFitEntireNetwork = () => {
     if (!mapInstanceRef.current || graph.nodeList.length === 0) return;
     const latlngs: L.LatLngExpression[] = graph.nodeList.map((n) => [n.lat, n.lng]);
@@ -593,7 +596,7 @@ export const MapContainer: React.FC<MapViewProps> = ({
     mapInstanceRef.current.panTo(bounds.getCenter(), { animate: true });
   };
 
-  // Manual Center on Active Route - Only triggered when user manually clicks button. STRICTLY preserves current zoom level.
+  // Center on Active Route
   const handleFocusRoute = () => {
     if (!mapInstanceRef.current) return;
     const { ucsState, greedyState } = simulationState;
@@ -610,33 +613,54 @@ export const MapContainer: React.FC<MapViewProps> = ({
     }
   };
 
+  const hasRoute = simulationState.ucsState.highlightedPath.length >= 2 ||
+    simulationState.greedyState.highlightedPath.length >= 2;
+
   return (
-    <div className="relative w-full h-full min-h-[380px] overflow-hidden bg-slate-950 flex flex-col">
+    <div className="relative w-full h-full min-h-0 flex-1 overflow-hidden bg-slate-950 flex flex-col">
       {/* Map DOM Element */}
-      <div ref={mapContainerRef} className="w-full h-full flex-1" style={{ minHeight: '360px' }} />
+      <div ref={mapContainerRef} className="w-full h-full flex-1" />
 
-      {/* Floating Action Controls on Map (Top-Left) */}
-      <div className="absolute top-3 left-3 z-[1000] flex items-center gap-2">
-        <button
-          onClick={handleFitEntireNetwork}
-          className="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/95 text-slate-200 border border-slate-700/80 shadow-lg hover:bg-slate-800 hover:text-white transition flex items-center gap-1.5 backdrop-blur-md"
-          title="Pusatkan peta ke seluruh node jaringan Serang"
-        >
-          <Maximize2 className="w-3.5 h-3.5 text-cyan-400" />
-          <span>Fit Jaringan</span>
-        </button>
+      {/* Unified Floating Top Bar (Controls never collide across all breakpoints) */}
+      <div className="absolute top-2 left-2 right-2 sm:top-3 sm:left-3 sm:right-3 z-[1000] pointer-events-none flex items-center justify-between gap-1.5 sm:gap-2">
+        {/* Left Side: Extra controls + Map Action Buttons */}
+        <div className="flex items-center gap-1.5 pointer-events-auto">
+          {extraLeftControls}
 
-        {(simulationState.ucsState.highlightedPath.length >= 2 ||
-          simulationState.greedyState.highlightedPath.length >= 2) && (
           <button
-            onClick={handleFocusRoute}
-            className="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/95 text-cyan-300 border border-cyan-800/80 shadow-lg hover:bg-cyan-950 transition flex items-center gap-1.5 backdrop-blur-md"
-            title="Fokus ke jalur rute hasil pencarian"
+            onClick={handleFitEntireNetwork}
+            className="min-h-[40px] px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900/95 text-slate-200 border border-slate-700/80 shadow-lg hover:bg-slate-800 hover:text-white transition flex items-center gap-1.5 backdrop-blur-md focus-visible:ring-2 focus-visible:ring-cyan-400"
+            title="Pusatkan peta ke seluruh node jaringan Serang"
+            aria-label="Pusatkan ke seluruh jaringan"
           >
-            <Compass className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Fokus Rute</span>
+            <Maximize2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <span className="hidden xs:inline">Fit Jaringan</span>
           </button>
+
+          {hasRoute && (
+            <button
+              onClick={handleFocusRoute}
+              className="min-h-[40px] px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900/95 text-cyan-300 border border-cyan-800/80 shadow-lg hover:bg-cyan-950 transition flex items-center gap-1.5 backdrop-blur-md focus-visible:ring-2 focus-visible:ring-cyan-400"
+              title="Fokus ke jalur rute hasil pencarian"
+              aria-label="Fokus ke jalur rute"
+            >
+              <Compass className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+              <span className="hidden xs:inline">Fokus Rute</span>
+            </button>
+          )}
+        </div>
+
+        {/* Center: Status pill (visible on sm+) */}
+        {centerControl && (
+          <div className="hidden sm:flex items-center pointer-events-auto">
+            {centerControl}
+          </div>
         )}
+
+        {/* Right Side: Layers Control + Extra right controls */}
+        <div className="flex items-center gap-1.5 pointer-events-auto">
+          {extraRightControls}
+        </div>
       </div>
     </div>
   );
